@@ -1,0 +1,30 @@
+.colorgroup {
+  background-color: #624185;
+}
+
+.serarchbar {
+  border-radius: 5px;
+}
+
+.searchbutton {
+  background-color: #472151;
+  padding-bottom: 12%;
+  border: 0;
+}
+
+.navcolor {
+  background-color: #472151;
+  color: #f2ad73;
+}
+
+.navcolor2 {
+  color: #f2ad73;
+}
+
+.account {
+  margin-left: 80%;
+}
+
+.login {
+  margin-left: 95%;
+}

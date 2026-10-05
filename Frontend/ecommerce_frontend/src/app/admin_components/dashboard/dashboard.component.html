@@ -1,0 +1,40 @@
+<main class="container py-4">
+  <h2>Store dashboard</h2>
+  <p *ngIf="error" role="alert">{{error}}</p>
+
+  <div class="dashboard-actions mb-4">
+    <button type="button" class="btn btn-primary" (click)="addProductFunction()">Add product</button>
+    <button type="button" class="btn btn-outline-primary" (click)="categoryAddFunction()">Manage categories</button>
+  </div>
+
+  <section aria-labelledby="categories-heading" class="mb-4">
+    <h3 id="categories-heading">Categories</h3>
+    <div class="category-list">
+      <button *ngFor="let item of category" type="button" class="btn btn-light" (click)="categoryDetail(item.id)">{{item.name}}</button>
+    </div>
+    <p *ngIf="category.length===0">No categories yet.</p>
+  </section>
+
+  <section aria-labelledby="orders-heading">
+    <h3 id="orders-heading">Orders</h3>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead><tr><th>Product</th><th>Customer</th><th>Quantity</th><th>Placed</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr *ngFor="let order of orders">
+            <td>{{order.product.name}}</td>
+            <td>{{order.user}}</td>
+            <td>{{order.quantity}}</td>
+            <td>{{order.ordered_date | date:'mediumDate'}}</td>
+            <td>{{order.status}}</td>
+            <td>
+              <button *ngIf="order.status==='order-placed'" type="button" class="btn btn-sm btn-primary" (click)="updateOrderStatus(order,'on-transit')">Mark in transit</button>
+              <button *ngIf="order.status==='on-transit'" type="button" class="btn btn-sm btn-primary" (click)="updateOrderStatus(order,'order-delivered')">Mark delivered</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p *ngIf="orders.length===0">No orders yet.</p>
+  </section>
+</main>

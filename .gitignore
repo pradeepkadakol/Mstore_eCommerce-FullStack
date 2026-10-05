@@ -1,0 +1,7 @@
+**/__pycache__/
+*.py[cod]
+Backend/ecommerceproject/.deps/
+Backend/ecommerceproject/.deps_local/
+Frontend/ecommerce_frontend/node_modules/
+Frontend/ecommerce_frontend/dist/
+Frontend/ecommerce_frontend/.angular/
